@@ -125,6 +125,13 @@ body:has(button:hover) #cursor-ring {
   border-radius: 2px;
   animation: loadBar 2s ease forwards, shimmer 1s linear infinite;
 }
+/* ===== PROFILE PHOTO ===== */
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
 @keyframes loadBar { from { width: 0% } to { width: 100% } }
 @keyframes shimmer {
   0% { background-position: 0% 50% }
@@ -691,7 +698,9 @@ footer span { color: var(--pink); }
       <div class="dashed-ring"></div>
       <div class="dashed-ring-2"></div>
       <div class="hero-3d-card">
-        <div class="card-avatar">AA</div>
+        <div class="card-avatar">
+  <img src="profile.jpg" alt="Aly Adel Mohamed" class="profile-img">
+</div>
         <div class="card-name">Aly Adel Mohamed</div>
         <div class="card-role">Full-Stack · AI/ML · CV</div>
         <div class="card-stats">
@@ -877,7 +886,9 @@ footer span { color: var(--pink); }
         <div class="ripple-ring"></div>
         <div class="ripple-ring"></div>
         <div class="ripple-ring"></div>
-        <div class="contact-avatar">AA</div>
+       <div class="contact-avatar">
+  <img src="profile.jpg" alt="Aly Adel Mohamed" class="profile-img">
+</div>
       </div>
       <div class="contact-tagline">Open to Work</div>
       <div class="contact-sub">Full-Stack · AI/ML · Computer Vision</div>
