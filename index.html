@@ -650,6 +650,12 @@ footer span { color: var(--pink); }
   .projects-grid { grid-template-columns: 1fr; }
   section { padding: 80px 5%; }
 }
+/* ===== CUSTOM UTILITIES ===== */
+@media (min-width: 900px) {
+  .desktop-nowrap {
+    white-space: nowrap;
+  }
+}
 </style>
 </head>
 <body>
@@ -688,7 +694,7 @@ footer span { color: var(--pink); }
     <h1 class="hero-name">Aly Adel<br>Mohamed</h1>
    <p class="hero-subtitle">
       Software Engineer & <strong>AI/ML Developer</strong><br>
-      <span style="white-space: nowrap;">Computer &amp; Communications Engineering Student @ Alexandria University</span>
+      <span class="desktop-nowrap">Computer &amp; Communications Engineering Student @ Alexandria University</span>
     </p>
     <div class="hero-ctas">
       <a href="#projects" class="btn-primary">View Projects</a>
