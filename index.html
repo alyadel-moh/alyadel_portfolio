@@ -551,24 +551,6 @@ section { padding: 100px 5%; }
   transition: transform 0.4s ease;
 }
 .cert-card:hover .cert-card-img-wrap img { transform: scale(1.04); }
-.cert-img-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  font-size: 2rem;
-  color: rgba(255,255,255,0.15);
-}
-.cert-img-placeholder span {
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.2);
-}
 .cert-card-body { padding: 14px 16px 16px; }
 .cert-card-issuer {
   font-size: 0.7rem;
@@ -744,6 +726,7 @@ footer span { color: var(--pink); }
 }
 @media (max-width: 600px) {
   .projects-grid { grid-template-columns: 1fr; }
+  .certs-grid { grid-template-columns: 1fr; }
   section { padding: 80px 5%; }
 }
 /* ===== CUSTOM UTILITIES ===== */
@@ -966,7 +949,7 @@ footer span { color: var(--pink); }
 
     <div class="cert-card reveal" onclick="openCertModal('cert-spring-boot.jpg','Spring Boot: Mastering the Fundamentals','Code with Mosh · Mar 2026')">
       <div class="cert-card-img-wrap">
-        <div class="cert-img-placeholder">🎓<span>Add image</span></div>
+   
         <img src="cert-spring-boot.jpg" alt="Spring Boot Certificate" onerror="this.style.display='none'">
       </div>
       <span class="cert-card-badge badge-mosh">Mosh</span>
@@ -979,7 +962,7 @@ footer span { color: var(--pink); }
 
     <div class="cert-card reveal" onclick="openCertModal('cert-ml-specialization.jpg','Machine Learning Specialization','Coursera · DeepLearning.AI &amp; Stanford · Sep 2025')">
       <div class="cert-card-img-wrap">
-        <div class="cert-img-placeholder">🎓<span>Add image</span></div>
+        
         <img src="cert-ml-specialization.jpg" alt="ML Specialization" onerror="this.style.display='none'">
       </div>
       <span class="cert-card-badge badge-specialization">Specialization</span>
@@ -992,7 +975,7 @@ footer span { color: var(--pink); }
 
     <div class="cert-card reveal" onclick="openCertModal('cert-unsupervised-ml.jpg','Unsupervised Learning, Recommenders &amp; RL','Coursera · DeepLearning.AI &amp; Stanford · Sep 2025')">
       <div class="cert-card-img-wrap">
-        <div class="cert-img-placeholder">🎓<span>Add image</span></div>
+       
         <img src="cert-unsupervised-ml.jpg" alt="Unsupervised ML" onerror="this.style.display='none'">
       </div>
       <span class="cert-card-badge badge-coursera">Coursera</span>
@@ -1005,7 +988,7 @@ footer span { color: var(--pink); }
 
     <div class="cert-card reveal" onclick="openCertModal('cert-advanced-algo.jpg','Advanced Learning Algorithms','Coursera · DeepLearning.AI &amp; Stanford · Sep 2025')">
       <div class="cert-card-img-wrap">
-        <div class="cert-img-placeholder">🎓<span>Add image</span></div>
+        <
         <img src="cert-advanced-algo.jpg" alt="Advanced Learning Algorithms" onerror="this.style.display='none'">
       </div>
       <span class="cert-card-badge badge-coursera">Coursera</span>
@@ -1018,7 +1001,7 @@ footer span { color: var(--pink); }
 
     <div class="cert-card reveal" onclick="openCertModal('cert-supervised-ml.jpg','Supervised ML: Regression &amp; Classification','Coursera · DeepLearning.AI &amp; Stanford · Aug 2025')">
       <div class="cert-card-img-wrap">
-        <div class="cert-img-placeholder">🎓<span>Add image</span></div>
+       
         <img src="cert-supervised-ml.jpg" alt="Supervised ML" onerror="this.style.display='none'">
       </div>
       <span class="cert-card-badge badge-coursera">Coursera</span>
@@ -1031,7 +1014,7 @@ footer span { color: var(--pink); }
 
     <div class="cert-card reveal" onclick="openCertModal('cert-react18-beginners.jpg','React 18 for Beginners','Code with Mosh · Aug 2025')">
       <div class="cert-card-img-wrap">
-        <div class="cert-img-placeholder">🎓<span>Add image</span></div>
+       
         <img src="cert-react18-beginners.jpg" alt="React 18 Beginners" onerror="this.style.display='none'">
       </div>
       <span class="cert-card-badge badge-mosh">Mosh</span>
@@ -1044,7 +1027,7 @@ footer span { color: var(--pink); }
 
     <div class="cert-card reveal" onclick="openCertModal('cert-react18-intermediate.jpg','React 18: Intermediate Topics','Code with Mosh · Aug 2025')">
       <div class="cert-card-img-wrap">
-        <div class="cert-img-placeholder">🎓<span>Add image</span></div>
+        
         <img src="cert-react18-intermediate.jpg" alt="React 18 Intermediate" onerror="this.style.display='none'">
       </div>
       <span class="cert-card-badge badge-mosh">Mosh</span>
@@ -1057,7 +1040,7 @@ footer span { color: var(--pink); }
 
     <div class="cert-card reveal" onclick="openCertModal('cert-js-html-css.jpg','Programming Foundations with JS, HTML &amp; CSS','Coursera · Duke University · Oct 2023')">
       <div class="cert-card-img-wrap">
-        <div class="cert-img-placeholder">🎓<span>Add image</span></div>
+
         <img src="cert-js-html-css.jpg" alt="JS HTML CSS" onerror="this.style.display='none'">
       </div>
       <span class="cert-card-badge badge-coursera">Coursera</span>
