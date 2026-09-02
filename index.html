@@ -446,6 +446,84 @@ section { padding: 100px 5%; }
 }
 .marquee-item::after { content: '✦'; color: var(--pink); font-size: 0.7rem; }
 
+/* ===== EXPERIENCE ===== */
+#experience { background: var(--bg2); }
+.exp-list { display: flex; flex-direction: column; gap: 28px; }
+.exp-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  padding: 32px;
+  border-left: 3px solid var(--cyan);
+  position: relative;
+}
+.exp-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.exp-role {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1.15rem;
+}
+.exp-dates {
+  font-size: 0.78rem;
+  color: var(--muted);
+  white-space: nowrap;
+  padding: 4px 12px;
+  background: rgba(6,182,212,0.1);
+  border: 1px solid rgba(6,182,212,0.25);
+  border-radius: 100px;
+}
+.exp-company {
+  color: var(--cyan);
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-bottom: 16px;
+}
+.exp-summary {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+.exp-subtitle {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--indigo-light);
+  margin: 18px 0 10px;
+}
+.exp-bullets { display: flex; flex-direction: column; gap: 8px; margin-bottom: 18px; }
+.exp-bullet {
+  display: flex;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--white);
+  line-height: 1.55;
+}
+.exp-bullet::before {
+  content: '▹';
+  color: var(--pink);
+  flex-shrink: 0;
+  font-weight: 700;
+}
+.exp-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.exp-tag {
+  padding: 3px 10px;
+  background: rgba(79,70,229,0.12);
+  border: 1px solid rgba(79,70,229,0.25);
+  border-radius: 4px;
+  font-size: 0.72rem;
+  color: var(--indigo-light);
+  font-weight: 500;
+}
+
 /* ===== PROJECTS ===== */
 #projects {}
 .projects-grid {
@@ -531,7 +609,7 @@ section { padding: 100px 5%; }
 }
 
 /* ===== EDUCATION ===== */
-#education { background: var(--bg2); }
+#education { background: var(--bg); }
 .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 40px; }
 .edu-card {
   background: var(--card-bg);
@@ -796,6 +874,7 @@ footer span { color: var(--pink); }
   .contact-right { display: none; }
   .nav-links { display: none; }
   .certs-grid { grid-template-columns: repeat(2, 1fr); }
+  .exp-card-header { flex-direction: column; }
 }
 @media (max-width: 600px) {
   .projects-grid { grid-template-columns: 1fr; }
@@ -831,6 +910,7 @@ footer span { color: var(--pink); }
   <ul class="nav-links">
     <li><a href="#hero">Home</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
     <li><a href="#education">Education</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -939,6 +1019,49 @@ footer span { color: var(--pink); }
     <span class="tech-chip">OAuth 2.0</span><span class="tech-chip">JWT</span><span class="tech-chip">RBAC</span><span class="tech-chip">Postman</span><span class="tech-chip">REST APIs</span>
     <span class="tech-chip">GitHub Actions</span><span class="tech-chip">Git</span><span class="tech-chip">Arduino</span><span class="tech-chip">Embedded C</span>
     <span class="tech-chip">OOP</span><span class="tech-chip">Design Patterns</span><span class="tech-chip">NLP</span><span class="tech-chip">Deep Learning</span>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">Where I've worked</div>
+  <h2 class="section-title reveal">Work <span>Experience</span></h2>
+  <div class="exp-list">
+    <div class="exp-card reveal">
+      <div class="exp-card-header">
+        <div class="exp-role">Software Engineering Intern</div>
+        <div class="exp-dates">July 2026 – August 2026</div>
+      </div>
+      <div class="exp-company">Silicon Mind</div>
+      <p class="exp-summary">
+        Completed a structured summer internship focused on the practical foundations of modern software engineering, working through hands-on sessions covering backend and frontend development, system design, security, DevOps, and code quality practices under the mentorship of a senior engineer.
+      </p>
+
+      <div class="exp-subtitle">Technical Areas Covered</div>
+      <div class="exp-bullets">
+        <div class="exp-bullet">Backend engineering fundamentals: request handling, data management, and reliability across services, with a comparative look at stacks such as Node.js, Spring Boot, Django/FastAPI, Rails, Go, and .NET.</div>
+        <div class="exp-bullet">Software architecture patterns and the trade-offs involved in structuring systems for maintainability and scale.</div>
+        <div class="exp-bullet">Modern frontend development across React, Angular, and Vue: components, props/state, data binding, event handling, lifecycle hooks, routing, state management, performance optimization, and build/bundling.</div>
+        <div class="exp-bullet">Authentication and authorization: distinguishing identity verification from access control, progressing from basic authentication to token-based and delegated authorization models.</div>
+        <div class="exp-bullet">API documentation using the OpenAPI specification, and how a well-defined contract supports frontend integration, backend validation, and QA, with Swagger for interactive testing.</div>
+        <div class="exp-bullet">Containerization and Docker: the difference between virtual machines and containers, and how containerization improves environment consistency and deployment reliability.</div>
+        <div class="exp-bullet">Continuous Integration and Continuous Delivery/Deployment (CI/CD): pipeline stages, quality gates, and building automated pipelines with GitHub Actions.</div>
+        <div class="exp-bullet">SOLID principles, dependency injection, and clean code practices for writing software that is easier to test, extend, and maintain.</div>
+        <div class="exp-bullet">Code quality tooling across the full toolchain: linting, formatting, type-checking, static analysis, automated testing, CI gates, and code review.</div>
+      </div>
+
+      <div class="exp-subtitle">Task Tracker Project</div>
+      <div class="exp-bullets">
+        <div class="exp-bullet">Built a task tracker application applying the software engineering practices covered during the internship, from initial design through implementation.</div>
+        <div class="exp-bullet">Used Jira to manage the project backlog, break work into epics and tickets, track sprint progress, and organize the development workflow from planning to delivery.</div>
+      </div>
+
+      <div class="exp-tags">
+        <span class="exp-tag">Backend Engineering</span><span class="exp-tag">Frontend Development</span><span class="exp-tag">Authentication &amp; Authorization</span>
+        <span class="exp-tag">API Documentation</span><span class="exp-tag">Docker</span><span class="exp-tag">CI/CD</span>
+        <span class="exp-tag">Clean Code</span><span class="exp-tag">Jira</span>
+      </div>
+    </div>
   </div>
 </section>
 
