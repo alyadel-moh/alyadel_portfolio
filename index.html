@@ -83,7 +83,7 @@ h2 span{background:linear-gradient(135deg,var(--il),var(--pink));-webkit-backgro
 .list{display:flex;flex-direction:column;gap:26px}
 .eh{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
 .role{font:700 1.15rem var(--fh)}
-.dates{font-size:.78rem;color:var(--muted);padding:4px 12px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.25);border-radius:100px;white-space:nowrap;height:fit-content}
+.dates{width:fit-content;align-self:flex-start;font-size:.78rem;color:var(--muted);padding:4px 12px;background:rgba(6,182,212,.1);border:1px solid rgba(6,182,212,.25);border-radius:100px;white-space:nowrap;height:fit-content}
 .co{color:var(--cyan);font-weight:500;font-size:.9rem;margin-bottom:14px}
 .sum{color:var(--muted);font-size:.88rem;margin-bottom:6px}
 .sub{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--il);margin:18px 0 10px}
@@ -100,11 +100,9 @@ h2 span{background:linear-gradient(135deg,var(--il),var(--pink));-webkit-backgro
 .pg{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .pc{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--bd);border-radius:16px;padding:26px;transition:.3s}
 .pc:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,.4)}
-.pc.feat{grid-column:span 3;border-color:rgba(236,72,153,.35);background:linear-gradient(135deg,rgba(79,70,229,.1),rgba(236,72,153,.06))}
 .pc .e{font-size:2rem}.pc h3{font:700 1.05rem var(--fh);margin:10px 0}
 .pc p{font-size:.85rem;color:var(--muted);margin-bottom:16px}
 .pc .lk{margin-top:auto}
-.star{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--pink)}
 /* edu */
 .eg{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:40px}
 .eg .card{border-left-color:var(--indigo)}.eg .card:nth-child(2){border-left-color:var(--pink)}
@@ -138,8 +136,8 @@ h2 span{background:linear-gradient(135deg,var(--il),var(--pink));-webkit-backgro
 .cr2 h3{font:700 1.4rem var(--fh)}.cr2 p{color:var(--muted);font-size:.85rem}
 footer{text-align:center;padding:30px;border-top:1px solid var(--bd);color:var(--muted);font-size:.82rem;position:relative;z-index:1}
 .rv{opacity:0;transform:translateY(30px);transition:opacity .7s,transform .7s}.rv.v{opacity:1;transform:none}
-@media(max-width:900px){#hero{grid-template-columns:1fr;text-align:center}.hr,.cr2,.nl{display:none}.badges,.ctas{justify-content:center}.pg,.eg,.cgd{grid-template-columns:1fr 1fr}.pc.feat{grid-column:span 2}.eg,.cgd{grid-template-columns:1fr}.cg{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:600px){.pg,.cg{grid-template-columns:1fr}.pc.feat{grid-column:auto}section{padding:76px 5%}}
+@media(max-width:900px){#hero{grid-template-columns:1fr;text-align:center}.hr,.cr2,.nl{display:none}.badges,.ctas{justify-content:center}.pg,.eg,.cgd{grid-template-columns:1fr 1fr}.eg,.cgd{grid-template-columns:1fr}.cg{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.pg,.cg{grid-template-columns:1fr}section{padding:76px 5%}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 
 /* ===== v4 design pass ===== */
@@ -172,7 +170,7 @@ p,h3,h4,.role,.co{overflow-wrap:anywhere}
  .pill{border-radius:14px;font-size:.75rem;padding:6px 12px;text-align:left}
  .ctas .btn{flex:1;text-align:center;min-width:140px}
  .card{padding:20px 16px}
- .eh{flex-direction:column;gap:8px}
+ .eh{flex-direction:column;align-items:flex-start;gap:8px}
  .role{font-size:1.05rem}
  .sub{margin:16px 0 10px}
  .spg{grid-template-columns:1fr}
@@ -288,9 +286,6 @@ const EXP=[
   tags:['Backend','Frontend','Auth','API Design','Docker','CI/CD','Clean Code','Jira']}
 ];
 const PROJ=[
- {e:'🧠',n:'Agentic RAG & Voice-Based Analysis System',d:'Evaluator-Generator RAG over PDFs, DOCX, code, web pages, Wikipedia, and audio. A Generator LLM answers only from retrieved context while an Evaluator checks grounding across up to 4 correction loops. Multi-agent Retriever-Analyst-Answer chatbot with query rewriting, hybrid search, reranking, Redis caching, voice queries, and OCR image upload.',t:['LangChain','Redis','FastAPI','LangSmith','ChromaDB'],l:[['GitHub',REPO.rag]]},
- {e:'🤖',n:'Intelligent AI Coding Assistant',d:'LLM intent classifier routes code generation vs. explanation requests, backed by a Chroma RAG pipeline with a relevance evaluator, human-feedback learning, long-term memory, and a sandboxed code execution tool.',t:['LangChain','RAG','ChromaDB','Streamlit'],l:[['GitHub',REPO.coder]]},
- {e:'🛡️',n:'Toxic Content Classification System',d:'Multi-label classifier (BiLSTM and fine-tuned BERT) on a Jigsaw-style dataset, extended into a multimodal pipeline with BLIP/Moondream2 captioning and CLIP zero-shot classification. Deployed on Streamlit with lazy-loading to fit cloud memory limits.',t:['BiLSTM','BERT','CLIP','Moondream2','Streamlit'],l:[['GitHub',REPO.toxic]]},
  {e:'📚',n:'Library Management System',d:'Full-stack platform with a Dockerized Spring Boot 3.5 REST API on Render and a React 19 + TypeScript frontend on Vercel, loading in under a second. Google OAuth 2.0, JWT, RBAC, Stripe billing, Flyway migrations on MySQL, and React Query infinite caching.',t:['Spring Boot','React 19','TypeScript','Docker','MySQL','Stripe','OAuth 2.0'],l:[['Frontend','https://github.com/alyadel-moh/library-managment-system'],['Backend','https://github.com/mohanadalaa/ordering-system'],['Live Demo','https://library-managment-system-woad.vercel.app/',1]]},
  {e:'🎮',n:'Game Hub',d:'Responsive game discovery platform to browse, search, and filter thousands of games by genre, platform, and rating. RAWG REST API with React Query caching, deployed on Vercel with CI/CD.',t:['React 18','TypeScript','Chakra UI','React Query','RAWG API'],l:[['GitHub','https://github.com/alyadel-moh/game-hub'],['Live Demo','https://gamehubweb.vercel.app/',1]]},
  {e:'🌐',n:'Connect Hub (Facebook Clone)',d:'Java desktop social network with news feed, posts, stories, groups, likes, comments, and friend graphs. Uses Observer, Factory, and Singleton patterns with custom JSON persistence.',t:['Java','Swing','Design Patterns','OOP'],l:[['GitHub','https://github.com/alyadel-moh/Lab9Connect']]},
@@ -314,7 +309,7 @@ const CERTS=[
 $('mq').innerHTML=[...Array(2)].map(()=>['Spring Boot','React 19','TypeScript','Node.js','PostgreSQL','LangChain','RAG','BERT','OpenCV','Docker','TanStack Query','FastAPI','Stripe','OAuth 2.0','GitHub Actions'].map(x=>`<span>${x}</span>`).join('')).join('');
 $('sk').innerHTML=Object.entries(SKILLS).map(([k,v])=>`<div class="sg rv"><h3>${k}</h3><div class="chips">${v.map(x=>`<span class="chip">${x}</span>`).join('')}</div></div>`).join('');
 $('exp').innerHTML=EXP.map(x=>`<div class="card rv"><div class="eh"><div class="role">${x.role}</div><div class="dates">${x.dates}</div></div><div class="co">${x.co}</div><p class="sum">${x.sum}</p><div class="sub">Technical Areas</div>${ul(x.areas)}<div class="sub">${x.sub}</div><div class="spg">${x.projs.map(p=>`<div class="sp"><h4>${p[0]}</h4><p>${p[1]}</p><div class="tags">${p[2].split(' · ').map(t=>`<span class="tag">${t}</span>`).join('')}</div>${p[3]?links(p[3]):''}</div>`).join('')}</div>${tags(x.tags)}</div>`).join('');
-$('pg').innerHTML=PROJ.map(p=>`<div class="pc rv ${p.feat?'feat':''}"><span class="e">${p.e}</span>${p.feat?'<span class="star">Featured · Silicon Mind capstone</span>':''}<h3>${p.n}</h3><p>${p.d}</p>${tags(p.t)}${links(p.l)}</div>`).join('');
+$('pg').innerHTML=PROJ.map(p=>`<div class="pc rv"><span class="e">${p.e}</span><h3>${p.n}</h3><p>${p.d}</p>${tags(p.t)}${links(p.l)}</div>`).join('');
 $('cg').innerHTML=CERTS.map((c,i)=>`<div class="cc rv" tabindex="0" role="button" data-i="${i}"><div class="ci"><img src="${c[0]}" alt="${c[1]}" onerror="this.remove()"></div><div class="cb"><div class="ci2" style="color:${c[5]}">${c[2]}</div><div class="cnm">${c[1]}</div><div class="cd2">${c[3]}</div><a class="cv" href="${c[4]}" target="_blank" rel="noopener">View Certificate</a></div></div>`).join('');
 
 /* ---------- MODAL ---------- */
