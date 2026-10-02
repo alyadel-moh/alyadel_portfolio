@@ -160,7 +160,7 @@ footer{text-align:center;padding:30px;border-top:1px solid var(--bd);color:var(-
  <div class="hr"><div class="orb"><div class="hc">
   <div class="av"><img src="profile.jpeg" alt="Aly Adel Mohamed" onerror="this.remove()"></div>
   <div class="cn">Aly Adel Mohamed</div><div class="cr">Full-Stack · AI/ML · CV</div>
-  <div class="st"><div><b>10+</b><small>Projects</small></div><div><b>300+</b><small>Volunteer hrs</small></div><div><b>3.7</b><small>GPA</small></div></div>
+  <div class="st"><div><b>10+</b><small>Projects</small></div><div><b>300+</b><small>Volunteer hrs</small></div></div>
  </div></div></div>
 </section>
 
@@ -174,7 +174,7 @@ footer{text-align:center;padding:30px;border-top:1px solid var(--bd);color:var(-
 
 <section id="education"><div class="lbl">Academic background</div><h2>Education &amp; <span>Certifications</span></h2>
  <div class="eg">
-  <div class="card"><div class="role">B.Sc. Computer &amp; Communications Engineering</div><div class="co">Alexandria University</div><div class="sum">Sept 2022 – July 2027 (Expected) · GPA 3.7 / 4.0 · Alexandria, Egypt</div></div>
+  <div class="card"><div class="role">B.Sc. Computer &amp; Communications Engineering</div><div class="co">Alexandria University</div><div class="sum">Sept 2022 – July 2027 (Expected) · Alexandria, Egypt</div></div>
   <div class="card"><div class="role">300+ Hours Volunteering</div><div class="co">Planetarium Science Center · Alpha Leo Apollo</div><div class="sum">Jan 2024 – Present · Mentored 300+ students through astronomy and STEM workshops; coordinated Ramadan food-distribution logistics and volunteers.</div></div>
  </div>
  <div class="ct">Certifications</div><div class="cg" id="cg"></div>
@@ -231,7 +231,7 @@ const EXP=[
    ['Toxic Content Classification System','Multi-label text classifier (BiLSTM and fine-tuned BERT) on a Jigsaw-style dataset, extended with BLIP/Moondream2 and CLIP zero-shot classification; deployed on Streamlit with lazy-loading to fit cloud memory limits.','BiLSTM · BERT · CLIP · Moondream2 · Streamlit',[['GitHub',REPO.toxic]]]],
   tags:['NLP','LLMs','RAG','Multi-Agent','BERT','FastAPI','LangSmith','Redis']},
  {role:'Software Engineering Intern',co:'Silicon Mind · Alexandria, Egypt (Hybrid)',dates:'Jul 2026 – Aug 2026',
-  sum:'Structured summer internship on the practical foundations of modern software engineering, through hands-on sessions under the mentorship of a senior engineer.',
+  sum:'Structured summer internship on the practical foundations of modern software engineering, through hands-on sessions under the mentorship of a senior software engineer.',
   areas:['Backend fundamentals: request handling, data management, and reliability, with a comparative look at Node.js, Spring Boot, Django/FastAPI, Rails, Go, and .NET.',
    'Frontend across React, Angular, and Vue: components, state, routing, performance, and bundling.',
    'Authentication vs. authorization, from basic auth to token-based and delegated models.',
@@ -239,11 +239,10 @@ const EXP=[
    'Docker and containerization; CI/CD pipelines and quality gates with GitHub Actions.',
    'SOLID, dependency injection, clean code, and code quality tooling (linting, type-checking, static analysis, testing, code review).'],
   sub:'Capstone Project: TaskTrack',
-  projs:[['TaskTrack','Delivered end-to-end: Controller-Service-Repository backend on PostgreSQL (Aiven Cloud) with versioned Sequelize migrations for transactional consistency; stateless JWT auth with SendGrid email verification; OpenAPI/Swagger REST docs; Docker Compose behind Nginx; TanStack Query optimistic UI with rollbacks. 100% backend coverage (Jest, SuperTest) and 97% frontend coverage (Vitest, React Testing Library) in automated CI/CD. Backlog and sprints managed in Jira under Diaa\'s mentorship.','Node.js · Express · PostgreSQL · React · Docker · Jira',[['GitHub','https://github.com/alyadel-moh/task_tracker'],['Live Demo','https://task-tracker-frontend-amber-three.vercel.app/',1]]]],
+  projs:[['TaskTrack','Delivered end-to-end: Controller-Service-Repository backend on PostgreSQL (Aiven Cloud) with versioned Sequelize migrations for transactional consistency; stateless JWT auth with SendGrid email verification; OpenAPI/Swagger REST docs; Docker Compose behind Nginx; TanStack Query optimistic UI with rollbacks. 100% backend coverage (Jest, SuperTest) and 97% frontend coverage (Vitest, React Testing Library) in automated CI/CD. Backlog and sprints managed in Jira under the mentorship of a senior software engineer.','Node.js · Express · PostgreSQL · React · Docker · Jira',[['GitHub','https://github.com/alyadel-moh/task_tracker'],['Live Demo','https://task-tracker-frontend-amber-three.vercel.app/',1]]]],
   tags:['Backend','Frontend','Auth','API Design','Docker','CI/CD','Clean Code','Jira']}
 ];
 const PROJ=[
- {e:'✅',n:'TaskTrack — Task & Project Management',feat:1,d:'Full-stack app where teams organize projects, assign and track tasks through their lifecycle, collaborate with roles and permissions, and monitor time spent. Built as the Silicon Mind capstone with a Controller-Service-Repository Node.js/Express backend, PostgreSQL on Aiven Cloud, Sequelize migrations, JWT + SendGrid verification, Swagger docs, and a React frontend using TanStack Query optimistic updates. Tested at 100% backend and 97% frontend coverage, shipped through CI/CD.',t:['Node.js','Express','PostgreSQL','Sequelize','React','TanStack Query','JWT','Docker','Jest','Vitest','CI/CD'],l:[['GitHub','https://github.com/alyadel-moh/task_tracker'],['Live Demo','https://task-tracker-frontend-amber-three.vercel.app/',1]]},
  {e:'🧠',n:'Agentic RAG & Voice-Based Analysis System',d:'Evaluator-Generator RAG over PDFs, DOCX, code, web pages, Wikipedia, and audio. A Generator LLM answers only from retrieved context while an Evaluator checks grounding across up to 4 correction loops. Multi-agent Retriever-Analyst-Answer chatbot with query rewriting, hybrid search, reranking, Redis caching, voice queries, and OCR image upload.',t:['LangChain','Redis','FastAPI','LangSmith','ChromaDB'],l:[['GitHub',REPO.rag]]},
  {e:'🤖',n:'Intelligent AI Coding Assistant',d:'LLM intent classifier routes code generation vs. explanation requests, backed by a Chroma RAG pipeline with a relevance evaluator, human-feedback learning, long-term memory, and a sandboxed code execution tool.',t:['LangChain','RAG','ChromaDB','Streamlit'],l:[['GitHub',REPO.coder]]},
  {e:'🛡️',n:'Toxic Content Classification System',d:'Multi-label classifier (BiLSTM and fine-tuned BERT) on a Jigsaw-style dataset, extended into a multimodal pipeline with BLIP/Moondream2 captioning and CLIP zero-shot classification. Deployed on Streamlit with lazy-loading to fit cloud memory limits.',t:['BiLSTM','BERT','CLIP','Moondream2','Streamlit'],l:[['GitHub',REPO.toxic]]},
