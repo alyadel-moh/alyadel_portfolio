@@ -88,8 +88,8 @@ h2 span{background:linear-gradient(135deg,var(--il),var(--pink));-webkit-backgro
 .sum{color:var(--muted);font-size:.88rem;margin-bottom:6px}
 .sub{font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--il);margin:18px 0 10px}
 .bl{display:flex;flex-direction:column;gap:8px}
-.bl li{display:flex;gap:10px;font-size:.85rem;line-height:1.55}
-.bl li::before{content:'▹';color:var(--pink);font-weight:700}
+.bl li{position:relative;padding-left:20px;font-size:.85rem;line-height:1.6;overflow-wrap:anywhere}
+.bl li::before{content:'▹';position:absolute;left:0;color:var(--pink);font-weight:700}
 .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
 .tag{padding:3px 10px;background:rgba(79,70,229,.12);border:1px solid rgba(79,70,229,.25);border-radius:4px;font-size:.72rem;color:var(--il);font-weight:500}
 .lk{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;padding-top:14px;border-top:1px solid var(--bd)}
@@ -141,6 +141,51 @@ footer{text-align:center;padding:30px;border-top:1px solid var(--bd);color:var(-
 @media(max-width:900px){#hero{grid-template-columns:1fr;text-align:center}.hr,.cr2,.nl{display:none}.badges,.ctas{justify-content:center}.pg,.eg,.cgd{grid-template-columns:1fr 1fr}.pc.feat{grid-column:span 2}.eg,.cgd{grid-template-columns:1fr}.cg{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:600px){.pg,.cg{grid-template-columns:1fr}.pc.feat{grid-column:auto}section{padding:76px 5%}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* ===== v4 design pass ===== */
+section{scroll-margin-top:68px}
+p,h3,h4,.role,.co{overflow-wrap:anywhere}
+.spg{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+.sp{display:flex;flex-direction:column;background:rgba(255,255,255,.03);border:1px solid var(--bd);border-radius:14px;padding:18px;transition:.25s}
+.sp:hover{border-color:rgba(129,140,248,.4);transform:translateY(-3px)}
+.sp h4{font:700 .95rem/1.3 var(--fh);margin-bottom:8px}
+.sp p{font-size:.82rem;color:var(--muted);margin-bottom:4px}
+.sp .tags{margin-top:12px}
+.sp .lk{margin-top:auto;padding-top:14px;border-top:1px solid var(--bd)}
+.sp .tags+.lk,.pc .tags+.lk{margin-top:14px}
+.l{min-height:40px;padding:8px 14px;justify-content:center;font-size:.8rem}
+.lk{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px}
+.pill{line-height:1.4}
+@media(max-width:900px){
+ nav{height:auto;min-height:56px;padding:8px 4%;gap:12px}
+ .nl{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;flex:1;justify-content:flex-end}
+ .nl::-webkit-scrollbar{display:none}
+ .nl a{display:block;padding:8px 10px;font-size:.8rem;white-space:nowrap}
+ section{scroll-margin-top:60px}
+ #hero{padding-top:100px;min-height:auto;gap:30px}
+ .hsub{font-size:1rem}
+}
+@media(max-width:600px){
+ section{padding:64px 5%}
+ h2{margin-bottom:32px}
+ .logo{font-size:1rem}
+ .pill{border-radius:14px;font-size:.75rem;padding:6px 12px;text-align:left}
+ .ctas .btn{flex:1;text-align:center;min-width:140px}
+ .card{padding:20px 16px}
+ .eh{flex-direction:column;gap:8px}
+ .role{font-size:1.05rem}
+ .sub{margin:16px 0 10px}
+ .spg{grid-template-columns:1fr}
+ .sp,.pc{padding:18px 16px}
+ .lk{grid-template-columns:1fr 1fr}
+ .lk .l:last-child:nth-child(odd){grid-column:1/-1}
+ .sg{padding:18px 16px}
+ .mf{flex-direction:column;align-items:stretch}
+ .mf>div:last-child{justify-content:stretch}
+ .mf .btn{flex:1;text-align:center}
+ .cl>a,.cl>div{padding:14px 16px}
+ .cl b{word-break:break-word}
+}
 </style>
 </head>
 <body>
@@ -268,7 +313,7 @@ const CERTS=[
 /* ---------- RENDER ---------- */
 $('mq').innerHTML=[...Array(2)].map(()=>['Spring Boot','React 19','TypeScript','Node.js','PostgreSQL','LangChain','RAG','BERT','OpenCV','Docker','TanStack Query','FastAPI','Stripe','OAuth 2.0','GitHub Actions'].map(x=>`<span>${x}</span>`).join('')).join('');
 $('sk').innerHTML=Object.entries(SKILLS).map(([k,v])=>`<div class="sg rv"><h3>${k}</h3><div class="chips">${v.map(x=>`<span class="chip">${x}</span>`).join('')}</div></div>`).join('');
-$('exp').innerHTML=EXP.map(x=>`<div class="card rv"><div class="eh"><div class="role">${x.role}</div><div class="dates">${x.dates}</div></div><div class="co">${x.co}</div><p class="sum">${x.sum}</p><div class="sub">Technical Areas</div>${ul(x.areas)}<div class="sub">${x.sub}</div>${ul(x.projs.map(p=>`<b>${p[0]}</b> — ${p[1]} <span style="color:var(--muted)">(${p[2]})</span>${p[3]?links(p[3]):''}`))}${tags(x.tags)}</div>`).join('');
+$('exp').innerHTML=EXP.map(x=>`<div class="card rv"><div class="eh"><div class="role">${x.role}</div><div class="dates">${x.dates}</div></div><div class="co">${x.co}</div><p class="sum">${x.sum}</p><div class="sub">Technical Areas</div>${ul(x.areas)}<div class="sub">${x.sub}</div><div class="spg">${x.projs.map(p=>`<div class="sp"><h4>${p[0]}</h4><p>${p[1]}</p><div class="tags">${p[2].split(' · ').map(t=>`<span class="tag">${t}</span>`).join('')}</div>${p[3]?links(p[3]):''}</div>`).join('')}</div>${tags(x.tags)}</div>`).join('');
 $('pg').innerHTML=PROJ.map(p=>`<div class="pc rv ${p.feat?'feat':''}"><span class="e">${p.e}</span>${p.feat?'<span class="star">Featured · Silicon Mind capstone</span>':''}<h3>${p.n}</h3><p>${p.d}</p>${tags(p.t)}${links(p.l)}</div>`).join('');
 $('cg').innerHTML=CERTS.map((c,i)=>`<div class="cc rv" tabindex="0" role="button" data-i="${i}"><div class="ci"><img src="${c[0]}" alt="${c[1]}" onerror="this.remove()"></div><div class="cb"><div class="ci2" style="color:${c[5]}">${c[2]}</div><div class="cnm">${c[1]}</div><div class="cd2">${c[3]}</div><a class="cv" href="${c[4]}" target="_blank" rel="noopener">View Certificate</a></div></div>`).join('');
 
